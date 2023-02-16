@@ -3,58 +3,68 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Landing',
+      text: 'What We Offer',
       links: [
         {
-          text: 'Sass',
-          href: getPermalink('/landing/saas'),
+          text: 'Self Assessments',
+          href: '#',
         },
         {
-          text: 'Startup',
-          href: getPermalink('/landing/startup'),
+          text: 'Bookkeeping',
+          href: '#',
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/landing/mobile-app'),
+          text: 'Payroll',
+          href: '#',
+        },
+        {
+          text: 'Annual Accounts',
+          href: '#',
+        },
+        {
+          text: 'Insurance',
+          href: '#',
         },
       ],
     },
     {
-      text: 'Pages',
+      text: 'Who We Help',
       links: [
         {
-          text: 'Features',
+          text: 'Small Businesses',
+          href: '#',
+        },
+
+        {
+          text: 'Contractors',
           href: '#',
         },
         {
-          text: 'Pricing',
+          text: 'Sole Traders',
           href: '#',
         },
         {
-          text: 'About us',
+          text: 'Freelancers',
           href: '#',
         },
         {
-          text: 'Contact',
+          text: 'Startups',
           href: '#',
         },
         {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: 'Property Owners',
+          href: '#',
         },
       ],
     },
     {
-      text: 'Widgets',
+      text: 'How We Work',
       href: '#',
     },
+
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'About Us',
+      href: '#',
     },
   ],
   actions: [{ type: 'button', text: 'Get A Quote' }],
