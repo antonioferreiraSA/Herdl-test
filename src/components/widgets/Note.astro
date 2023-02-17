@@ -1,11 +1,17 @@
 ---
-import { Icon } from 'astro-icon';
+import Hero from '~/components/widgets/Hero.astro';
 ---
 
-<section class="bg-blue-50 dark:bg-slate-800">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-md text-center font-medium">
-    <span class="font-bold">
-      <Icon name="tabler:info-square" class="w-5 h-5 inline-block align-text-bottom" /> Philosophy:</span
-    > Simplicity, Best Practices and High Performance
+<section class="bg-gradient-to-r from-[#4239f0] to to-[#4ca5fb] dark:bg-slate-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-md text-center font-medium">
+    <h2 class="font-medium text-6xl text-white py-10">Hassle Free Accounting</h2>
+    <span class="text-white">
+      We understand that managing a successful company, property portfolio, or self-employed business can be time
+      consuming and requires a lot of hard work. On top of all of this, we feel that business owners and professionals
+      alike shouldn't also have to worry about dealing with their accounting and personal tax themselves, and that's
+      where we come in! At QAccounting we offer award winning online accounting solutions for any UK business and will
+      work with you to ensure you operate cost effective and tax efficiently throughout your time as a client.</span
+    >
   </div>
+  <Hero callToAction={{ text: 'Get A Quote', href: '#' }} callToAction2={{ text: 'Pricing', href: '#' }} />
 </section>
