@@ -33,8 +33,8 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>QAccounting</a>
-          <hr style={{}} />
+          <a class="inline-block font-medium text-3xl pb-3 text-white" href={getHomePermalink()}>QAccounting</a>
+          <hr class="w-16" />
           {
             socialLinks?.length ? (
               <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
@@ -55,9 +55,6 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
               ''
             )
           }
-        </div>
-        <div class="text-sm text-muted">
-          <Hero callToAction={{ text: ' Arrange A Call-Back', href: '#' }} />
         </div>
       </div>
       {
