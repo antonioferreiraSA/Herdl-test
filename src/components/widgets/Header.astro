@@ -98,8 +98,6 @@ const {
     </nav>
     <div class:list={[{ 'ml-auto': position === 'left' }, 'md:self-center flex items-center md:mb-0']}>
       <div class="hidden items-center md:flex">
-        {showToggleTheme && <ToggleTheme iconClass="w-5 h-5" />}
-
         {
           showRssFeed && (
             <>
@@ -123,7 +121,7 @@ const {
               {actions.map(({ text, href, type }) => (
                 <a
                   class:list={[
-                    'bg-[#d03959]  text-white btn bg ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm',
+                    'bg-[#d03959]  border-[#d03959] text-white btn bg ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm',
                     { 'btn-ghost': type === 'ghost', 'btn-primary': type === 'primary' },
                   ]}
                   href={href}
