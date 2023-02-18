@@ -1,7 +1,7 @@
 ---
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
-
+import { Icon } from 'astro-icon';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Notee from '~/components/widgets/Note2.astro';
@@ -38,6 +38,63 @@ const clientImages = [
       <h1 class="text-6xl dark:text-blue-200 text-[#1c2557] font-medium">for one low monthly fee</h1>
     </Fragment>
   </Hero>
+
+  <div class="flex justify-center items-center gap-4 pb-4">
+    <div class="flex items-center gap-2">
+      <Icon name="mdi:tick-circle" class="w-7 h-7" color="#12b173" />
+      <h2 class="text-xm font-normal dark:text-white text-[#212529]">5* rated services</h2>
+    </div>
+    <div class="flex items-center gap-2">
+      <Icon name="mdi:tick-circle" class="w-7 h-7" color="#12b173" />
+      <h2 class="text-xm font-normal dark:text-white text-[#212529]">Tailored solutions to you</h2>
+    </div>
+    <div class="flex items-center gap-2">
+      <Icon name="mdi:tick-circle" class="w-7 h-7" color="#12b173" />
+      <h2 class="text-xm font-normal dark:text-white text-[#212529]">Hassle free accounting</h2>
+    </div>
+  </div>
+
+  <div class="flex justify-center items-center gap-4 pb-4">
+    <div class="relative">
+      <select
+        class="block appearance-none w-full bg-white border dark:bg-[#212529] border-[#bebebe] hover:border-gray-500 px-4 py-2 pr-8 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline"
+      >
+        <option value="">Select Business Type</option>
+        <option value="option1"> Sole Trader</option>
+        <option value="option2">LTD Company</option>
+        <option value="option3"> Property Company</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#bebebe]">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="relative ml-4">
+      <select
+        class="block appearance-none w-full bg-white dark:bg-[#212529] border border-[#bebebe] hover:border-gray-500 px-4 py-2 pr-8 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline"
+      >
+        <option value="">Your Turnover</option>
+        <option value="option1"> £0 - £20,000</option>
+        <option value="option2"> £20,000 - £45,000</option>
+        <option value="option3"> £45,000 - £85,000</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#bebebe]">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"></path>
+        </svg>
+      </div>
+    </div>
+    <button class="bg-[#d03959] hover:bg-pink-500 hover:text-white text-white py-2 px-9 rounded-full">
+      Get A Quote</button
+    >
+  </div>
 
   <!-- Note Widget ******************* -->
 
