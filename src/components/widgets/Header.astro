@@ -113,7 +113,7 @@ const {
                 <Icon name="ri:linkedin-fill" class="w-6 h-6" color="#1c2557" />
               </a>
               <Icon name="ic:baseline-local-phone" class="w-6 h-6 " color="#1c2557" />
-              <h1>0116 243 7868</h1>
+              <h1 class="text-[#1c2557]">0116 243 7868</h1>
             </>
           )
         }
@@ -123,7 +123,7 @@ const {
               {actions.map(({ text, href, type }) => (
                 <a
                   class:list={[
-                    'btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm',
+                    'bg-[#d03959]  text-white btn bg ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm',
                     { 'btn-ghost': type === 'ghost', 'btn-primary': type === 'primary' },
                   ]}
                   href={href}
