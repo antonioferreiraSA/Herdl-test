@@ -4,6 +4,8 @@ const CONFIG = {
   origin: 'https://astrowind.vercel.app',
   basePathname: '/',
   trailingSlash: false,
+  description:
+    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
 
   title: 'Online Accountant, Online Accounting Services - QAccounting',
 

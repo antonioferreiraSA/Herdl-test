@@ -2,7 +2,7 @@ import rss from '@astrojs/rss';
 
 import { SITE, BLOG } from '~/config.mjs';
 import { fetchPosts } from '~/utils/blog';
-import { getPermalink } from '~/utils/permalinks';
+import { getPermalink } from '../utils/permalinks';
 
 export const get = async () => {
   if (BLOG.disabled) {
