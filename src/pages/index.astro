@@ -1,21 +1,13 @@
 ---
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
-import Testimage from '~/assets/images/1.png';
-import { Icon } from 'astro-icon';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Notee from '~/components/widgets/Note2.astro';
+import Icon from '../assets/images/1.svg';
 
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const meta = {
   title: SITE.title,
@@ -60,7 +52,7 @@ const meta = {
           title: 'Experienced',
           description:
             'This isn’t our first rodeo! Here at QAccounting we have been offering accounting services to businesses up and down the country for over twenty years. Our team of accountants has vast experience and expertise and is on hand to help all of our customers every working day.',
-          icon: 'tabler:brand-tailwind',
+          icon: 'tabler:components',
         },
         {
           title: 'Trusted',
