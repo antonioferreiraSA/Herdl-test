@@ -16,7 +16,7 @@
   }
 
   .bg-dark {
-    background-color: var(--aw-color-bg-page);
+    @apply bg-slate-900;
   }
 
   .btn {
