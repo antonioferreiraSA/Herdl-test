@@ -13,6 +13,19 @@ const meta = {
   description: SITE.description,
   dontUseTitleTemplate: true,
 };
+
+const clientImages = [
+  'https://www.qaccounting.com/wp-content/uploads/2021/11/xero_logo_icon_167949-320x160.png',
+  'https://www.qaccounting.com/wp-content/uploads/2021/11/SME-news-320x320.png',
+  'https://www.qaccounting.com/wp-content/uploads/2021/11/Cashplus-320x155.jpg',
+  'https://www.qaccounting.com/wp-content/uploads/2021/11/St-JAmes-320x155.png',
+  'https://www.qaccounting.com/wp-content/uploads/2021/11/Vantage-320x178.png',
+  'https://www.qaccounting.com/wp-content/uploads/2021/11/logo_yellow_black-320x104.png',
+  'https://www.qaccounting.com/wp-content/uploads/2020/04/cw-removebg-preview-320x104.png',
+  'https://www.qaccounting.com/wp-content/uploads/2020/04/QCLogo.png',
+  'https://www.qaccounting.com/wp-content/uploads/2020/03/HM_Revenue_and_Customs_UK_-2013.svg__68_0-320x81.png',
+  'https://www.qaccounting.com/wp-content/uploads/2020/04/Metro-320x118.png',
+];
 ---
 
 <Layout {meta}>
@@ -166,6 +179,14 @@ const meta = {
     />
   </div>
   <Notee />
+
+  <div class="grid grid-cols-5 grid-rows-2 px-10 justify-around py-32">
+    {
+      clientImages.map((image, i) => (
+        <img key={i} src={image} alt={`Image ${i}`} class="   w-auto  h-24  py-3    px-6 " />
+      ))
+    }
+  </div>
 
   <!-- Content Widget **************** -->
 
