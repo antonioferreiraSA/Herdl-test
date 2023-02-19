@@ -1,6 +1,32 @@
 ---
+import axios from 'axios';
+
+const githubQuery = {
+  query: `
+      query heading {
+        websiteLogo {
+          id
+          logoName
+        }
+      }
+      `,
+};
+
+const res = await axios({
+  url: `https://graphql.datocms.com/`,
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json',
+    Authorization: `${import.meta.env.TOKEN}`,
+  },
+  data: JSON.stringify(githubQuery),
+}).catch((error) => {
+  console.log('🔥 error:', error);
+});
+
+const { websiteLogo } = res.data.data;
 ---
 
 <span class="self-center ml-2 text-10xl md:text-xl font-semibold text-[#1c2557] whitespace-nowrap dark:text-white">
-  QACCOUNTING</span
+  {websiteLogo ? websiteLogo.logoName : 'no data'}</span
 >
