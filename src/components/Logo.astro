@@ -24,7 +24,7 @@ const res = await axios({
   console.log('🔥 error:', error);
 });
 
-const { websiteLogo } = res.data.data;
+const { websiteLogo } = res?.data?.data ?? { websiteLogo: null };
 ---
 
 <span class="self-center ml-2 text-10xl md:text-xl font-semibold text-[#1c2557] whitespace-nowrap dark:text-white">

@@ -24,7 +24,7 @@ const res = await axios({
   console.log('🔥 error:', error);
 });
 
-const { note2Pink } = res.data.data;
+const { note2Pink } = res?.data?.data ?? { note2Pink: null };
 ---
 
 <section class="bg-[#d03959] dark:bg-slate-800 pb-10">

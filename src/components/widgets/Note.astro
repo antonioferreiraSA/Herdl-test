@@ -25,7 +25,7 @@ const res = await axios({
   console.log('🔥 error:', error);
 });
 
-const { note1Blue } = res.data.data;
+const { note1Blue } = res?.data?.data ?? { note1Blue: null };
 ---
 
 <section class="bg-gradient-to-r from-[#4239f0] to to-[#4ca5fb] dark:bg-slate-800">

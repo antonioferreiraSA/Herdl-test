@@ -52,7 +52,7 @@ const res = await axios({
   console.log('🔥 error:', error);
 });
 
-const { heading1 } = res.data.data;
+const { heading1 } = res?.data?.data ?? { heading1: null };
 ---
 
 <Layout {meta}>
