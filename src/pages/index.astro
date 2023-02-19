@@ -1,11 +1,11 @@
 ---
+import axios from 'axios';
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon';
-import Hero from '~/components/widgets/Hero.astro';
+
 import Note from '~/components/widgets/Note.astro';
 import Notee from '~/components/widgets/Note2.astro';
-
 import Features from '~/components/widgets/Features.astro';
 
 const meta = {
@@ -26,12 +26,41 @@ const clientImages = [
   'https://www.qaccounting.com/wp-content/uploads/2020/03/HM_Revenue_and_Customs_UK_-2013.svg__68_0-320x81.png',
   'https://www.qaccounting.com/wp-content/uploads/2020/04/Metro-320x118.png',
 ];
+
+const githubQuery = {
+  query: `
+      query heading {
+        heading1 {
+          id
+          subHeading
+          mainHeading
+        }
+      }
+      `,
+};
+
+const res = await axios({
+  url: `https://graphql.datocms.com/`,
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json',
+    Authorization: `${import.meta.env.TOKEN}`,
+  },
+  data: JSON.stringify(githubQuery),
+}).catch((error) => {
+  console.log('🔥 error:', error);
+});
+
+const { heading1 } = res.data.data;
 ---
 
 <Layout {meta}>
   <!-- Hero Widget ******************* -->
+
   <div class="pt-20 pb-4">
-    <h1 class="text-center text-5xl dark:text-blue-200 text-[#1c2557] font-bold pb-5">QAccounting</h1>
+    <h1 class="text-center text-5xl dark:text-blue-200 text-[#1c2557] font-bold pb-5">
+      {heading1 ? heading1.mainHeading : 'no data'}
+    </h1>
     <h1 class="text-center text-6xl dark:text-blue-200 text-[#1c2557] font-medium">Your online accountant</h1>
     <h1 class="text-center text-6xl dark:text-blue-200 text-[#1c2557] font-medium">for one low monthly fee</h1>
   </div>

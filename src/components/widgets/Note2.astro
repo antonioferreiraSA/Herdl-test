@@ -1,14 +1,37 @@
 ---
-import Hero from '~/components/widgets/Hero.astro';
+import axios from 'axios';
+const githubQuery = {
+  query: `
+      query heading {
+        note2Pink {
+          id
+          heading
+          paragraph
+        }
+      }
+      `,
+};
+
+const res = await axios({
+  url: `https://graphql.datocms.com/`,
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json',
+    Authorization: `${import.meta.env.TOKEN}`,
+  },
+  data: JSON.stringify(githubQuery),
+}).catch((error) => {
+  console.log('🔥 error:', error);
+});
+
+const { note2Pink } = res.data.data;
 ---
 
 <section class="bg-[#d03959] dark:bg-slate-800 pb-10">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 text-md font-medium">
-    <h2 class="font-medium text-6xl text-white py-7">Over 20 years of experience</h2>
+    <h2 class="font-medium text-6xl text-white py-7">{note2Pink ? note2Pink.heading : 'no data'}</h2>
     <span class="text-white">
-      As accountants with over twenty years of experience, we’ve helped thousands of individuals with their financial
-      affairs. Whether you’re new to accounting or thinking of switching, we have the knowledge and solutions to suit
-      your needs.</span
-    >
+      {note2Pink ? note2Pink.paragraph : 'no data'}
+    </span>
   </div>
 </section>

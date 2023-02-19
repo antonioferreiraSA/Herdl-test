@@ -1,17 +1,37 @@
 ---
-import Hero from '~/components/widgets/Hero.astro';
+import axios from 'axios';
+
+const githubQuery = {
+  query: `
+      query heading {
+        note1Blue {
+          id
+          heading
+          paragraph
+        }
+      }
+      `,
+};
+
+const res = await axios({
+  url: `https://graphql.datocms.com/`,
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json',
+    Authorization: `${import.meta.env.TOKEN}`,
+  },
+  data: JSON.stringify(githubQuery),
+}).catch((error) => {
+  console.log('🔥 error:', error);
+});
+
+const { note1Blue } = res.data.data;
 ---
 
 <section class="bg-gradient-to-r from-[#4239f0] to to-[#4ca5fb] dark:bg-slate-800">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 text-md text-center font-medium">
-    <h2 class="font-medium text-6xl text-white py-10">Hassle Free Accounting</h2>
-    <span class="text-white">
-      We understand that managing a successful company, property portfolio, or self-employed business can be time
-      consuming and requires a lot of hard work. On top of all of this, we feel that business owners and professionals
-      alike shouldn't also have to worry about dealing with their accounting and personal tax themselves, and that's
-      where we come in! At QAccounting we offer award winning online accounting solutions for any UK business and will
-      work with you to ensure you operate cost effective and tax efficiently throughout your time as a client.</span
-    >
+    <h2 class="font-medium text-6xl text-white py-10">{note1Blue ? note1Blue.heading : 'no data'}</h2>
+    <span class="text-white"> {note1Blue ? note1Blue.paragraph : 'no data'}</span>
   </div>
   <div class="flex justify-center pr-10 space-x-1.5 py-10">
     <button class="bg-[#fff] hover:bg-pink-500 text-[#1c2557] py-2 px-16 rounded-full"> Get A Quote</button>
